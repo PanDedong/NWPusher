@@ -11,7 +11,7 @@ Pusher
 
 Installation
 ------------
-Install the Mac app using [Homebrew cask](https://github.com/phinze/homebrew-cask):
+Install the Mac app using [Homebrew cask](https://github.com/caskroom/homebrew-cask):
 
 ```shell
 brew cask install pusher
@@ -21,10 +21,16 @@ Or download the latest `Pusher.app` binary:
 
 - [Download latest binary](https://github.com/noodlewerk/NWPusher/releases/latest)
 
-Alternatively, you can include NWPusher as a framework, using [CocoaPods](http://cocoapods.org/):
+Alternatively, you can include NWPusher as a framework, using [CocoaPods](https://cocoapods.org/):
 
 ```ruby
 pod 'NWPusher', '~> 0.7.0'
+```
+
+or [Carthage](https://github.com/Carthage/Carthage) (iOS 8+ is required to use Cocoa Touch Frameworks)
+
+```
+github "noodlewerk/NWPusher"
 ```
 
 Or simply include the source files you need. NWPusher has a modular architecture and does not have any external dependencies, so use what you like.
@@ -359,6 +365,8 @@ If it fails to connect then check:
 - Are you using the right identity? Use `[NWSecTools inspectIdentity:identity]` to inspect the identity instance. In general `NWSecTools` can be helpful for inspecting certificates, identities and the keychain.
 
 - Can you connect with the push servers? Try `[NWPusher connectWithIdentity:identity error:&error]` or `[NWPusher connectWithPKCS12Data:pkcs12 password:password error:&error]`.
+
+- Pusher connects on port `2195` with hosts `gateway.push.apple.com` and `gateway.sandbox.push.apple.com`, and on port `2196` with hosts `feedback.push.apple.com` and `feedback.sandbox.push.apple.com`. Make sure your firewall is configured to allow these connections.
 
 If nothing is delivered to the device then check:
 

@@ -3,6 +3,19 @@ Change Log
 
 ### master (unreleased)
 
+### 0.7.3 (2016-09-19)
+
+* Add support for Watch Kit certificates (DanielFontes)
+* Add support for handshake error (certificate unknown)
+
+### 0.7.2 (2016-07-19)
+
+* Added support for Carthage, thanks to @zats
+
+### 0.7.1 (2016-04-27)
+
+* Remove Mac enum from Touch target
+
 ### 0.7.0 (2016-01-07)
 
 * Add support for simplified certificates (pull request by 666tos)
